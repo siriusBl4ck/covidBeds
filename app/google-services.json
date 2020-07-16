@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "491611138982",
+    "firebase_url": "https://sarscov2-3f435.firebaseio.com",
+    "project_id": "sarscov2-3f435",
+    "storage_bucket": "sarscov2-3f435.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491611138982:android:66b29ed541dc1db090bd67",
+        "android_client_info": {
+          "package_name": "com.stuff.covidbeds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491611138982-jqe414uq35ddnl46utb92bi8idugfpp2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stuff.covidbeds",
+            "certificate_hash": "ec6618c03498770400a3c57e68ddbff06182a309"
+          }
+        },
+        {
+          "client_id": "491611138982-qkg01obncrfoae5kd6fktbf10e7778j5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx7TXi5Ic_0kKfm-7ERVL2H3DG1KjmwWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491611138982-qkg01obncrfoae5kd6fktbf10e7778j5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
