@@ -123,8 +123,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Toast.makeText(MainActivity.this, "signing in...",
-                        Toast.LENGTH_SHORT).show();
                 signIn();
             }
         });
@@ -148,8 +146,9 @@ public class MainActivity extends AppCompatActivity {
 
     void sendPasswordResetEmail(){
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        String emailAddress = username.getText().toString();
-        if (emailAddress != "") {
+
+        if (username.getText().toString().length() != 0) {
+            String emailAddress = username.getText().toString();
             auth.sendPasswordResetEmail(emailAddress)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -158,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "an email was sent to your registered email address!",
                                         Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(MainActivity.this, "invalid email address!",
+                                Toast.makeText(MainActivity.this, "Invalid email address!",
                                         Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -171,30 +170,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void signIn(){
-        String email = username.getText().toString();
-        String pass = password.getText().toString();
-        mAuth.signInWithEmailAndPassword(email, pass)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(MainActivity.this, "You have signed in successfully!",
-                                    Toast.LENGTH_SHORT).show();
-                            String userStuff = username.getText().toString().replace("@gmail.com", "");
-                            redistData(userStuff);
-                            //updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(MainActivity.this, "Sign in failed!\nEither your uesrname or password is incorrect!",
-                                    Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
-                        }
+        if (username.getText().toString().length() != 0 && password.getText().toString().length() != 0) {
+            Toast.makeText(MainActivity.this, "signing in...",
+                    Toast.LENGTH_SHORT).show();
+            String email = username.getText().toString();
+            String pass = password.getText().toString();
+            mAuth.signInWithEmailAndPassword(email, pass)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                Toast.makeText(MainActivity.this, "You have signed in successfully!",
+                                        Toast.LENGTH_SHORT).show();
+                                String userStuff = username.getText().toString().replace("@gmail.com", "");
+                                redistData(userStuff);
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Toast.makeText(MainActivity.this, "Sign in failed!\nEither your uesrname or password is incorrect!",
+                                        Toast.LENGTH_SHORT).show();
+                            }
 
-                        // ...
-                    }
-                });
+                            // ...
+                        }
+                    });
+        }
+        else{
+            Toast.makeText(MainActivity.this, "Please enter a valid email and password!",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     void updateDataV2(){
