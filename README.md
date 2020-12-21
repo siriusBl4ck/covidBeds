@@ -10,3 +10,5 @@ Since each hospital is wholly responsible for its own data, this can encourage h
 Giving hospitals the responsibility also prevents manipulation of data by any one authority.
 
 Future ideas which can be implemented include integration with Google Maps so a potential patient can access directions to their nearest COVID hospital which is not beyond capacity. This will discourage crowding in some hospitals. It will also save time of the doctors, who in my experience have to literally phone call the doctors in other hospitals in order to ask them if they have capacity for patients.
+
+(Note: In order to save costs and space, the database for covidBeds has been disabled as of December 2020. The app will therefore, cease to work. If you are interested and want to explore this app, drop me an email, and if the incentives are high enough, I might consider enabling the database).
