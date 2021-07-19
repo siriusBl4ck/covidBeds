@@ -1,6 +1,4 @@
 # covidBeds
-by Saurav Kale
-2nd year BTech Electrical Engineering, IIT Madras
 
 The purpose of this app is to be an informative dashboard with a decentralized source of information. 
 Anyone can view the dashboard to get information about the current availability of COVID beds in their city.
